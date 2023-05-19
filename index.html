@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styleSheet/scroll.css" />
+    <link rel="stylesheet" href="./styleSheet/responsive.css" />
+  </head>
+  <body>
+    <div class="body-container">
+      <img src="./assets/logo.svg" alt="Logo Not Found" />
+
+      <!-- header -->
+      <div class="button-container">
+        <div class="button-row">
+          <button class="button">기본정보 관리</button>
+          <button class="button">투자유형 관리</button>
+          <button class="button">입출금내역 조회</button>
+          <button class="button">영업내역 조회</button>
+          <button class="button">투자내역 조회</button>
+          <button class="button">채권내역 조회</button>
+          <button class="button">SMS 관리</button>
+          <button class="button">상담내역 관리</button>
+          <button class="button">1:1문의내역 조회</button>
+        </div>
+      </div>
+
+      <!-- dropdown and menu -->
+
+      <div class="header-dropdown">
+        <div>
+          <h2 class="heading">신청 목록</h2>
+          <span class="sub-heading">(총 100명 | 승인대기 1건)</span>
+        </div>
+        <div class="dropdown-container">
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              id="dropdownToggle"
+              onclick="dropdownToggle('dropdownMenu')"
+            >
+              승인여부 전체
+              <span class="dropdown-arrow">
+                <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+              </span>
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li class="dropdown-item">승인여부 전체</li>
+              <li class="dropdown-item">승인완료</li>
+              <li class="dropdown-item">승인대기</li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              id="dropdownToggle"
+              onclick="dropdownToggle('dropdownMenu-two')"
+            >
+              신청일시순
+              <span class="dropdown-arrow">
+                <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+              </span>
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li class="dropdown-item">신청일시순</li>
+              <li class="dropdown-item">승인일시순</li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              id="dropdownToggle"
+              onclick="dropdownToggle('dropdownMenu-three')"
+            >
+              승인상태 변경
+              <span class="dropdown-arrow">
+                <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+              </span>
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li class="dropdown-item">승인완료</li>
+              <li class="dropdown-item">승인거부</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-dropdown header-dropdown-two">
+        <button class="header-btn">등록</button>
+
+        <div>
+          <span class="sub-heading">선택한 0건</span>
+          <div class="dropdown-container">
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle"
+                id="dropdownToggle"
+                onclick="dropdownToggle('dropdownMenu')"
+              >
+                승인상태 변경
+                <span class="dropdown-arrow">
+                  <img src="./assets/dropdown_arrow.svg" alt="No Icon Found" />
+                </span>
+              </button>
+              <ul class="dropdown-menu" id="dropdownMenu">
+                <li class="dropdown-item">승인여부 전체</li>
+                <li class="dropdown-item">승인완료</li>
+                <li class="dropdown-item">승인대기</li>
+              </ul>
+            </div>
+
+            <button class="header-btn">저장</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table id="myTable">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="selectAll" /></th>
+              <th>No</th>
+              <th>기존유형</th>
+              <th>신청유형</th>
+              <th>제출서류</th>
+              <th>신청일시</th>
+              <th>승인여부</th>
+              <th>승인거부 사유</th>
+              <th>승인일시</th>
+              <th>승인일시</th>
+              <th>관리자</th>
+              <th>标签1</th>
+              <th>标签2</th>
+              <th>标签3</th>
+              <th>标签4</th>
+              <th>标签5</th>
+              <th>标签6</th>
+              <th>标签7</th>
+              <th>标签8</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Rows will be dynamically generated here -->
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button id="firstPage">
+          <img src="./assets/jumpToLeft.svg" alt="Icon Not Found" />
+        </button>
+        <button id="prevPage" disabled>
+          <img src="./assets/left.svg" alt="Icon Not Found" />
+        </button>
+        <div id="paginationNumbers"></div>
+        <button id="nextPage">
+          <img src="./assets/right.svg" alt="Icon Not Found" />
+        </button>
+        <button id="lastPage">
+          <img src="./assets/jumpToRight.svg" alt="Icon Not Found" />
+        </button>
+      </div>
+    </div>
+
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>
