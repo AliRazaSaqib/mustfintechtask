@@ -229,3 +229,16 @@ window.onclick = function (event) {
     }
   }
 };
+
+// show and hide sections
+function showDiv(index) {
+  // Hide all divs
+  var divs = document.querySelectorAll('[id^="div"]');
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].style.display = "none";
+  }
+
+  // Show the selected div
+  var selectedDiv = document.getElementById("div" + index);
+  selectedDiv.style.display = "block";
+}

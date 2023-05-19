@@ -138,6 +138,9 @@
   padding: 10px 0;
   margin-top: 0;
 }
+.header-dropdown-two {
+  border-bottom: none;
+}
 .header-btn {
   background: #2a3958;
   border-radius: 10px;

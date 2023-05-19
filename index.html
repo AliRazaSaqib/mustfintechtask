@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="notranslate" translate="no">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8" content="notranslate" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
+    <title>Must Fin Tech Task</title>
+    <meta name="description" content="Must Fin Tech Task" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styleSheet/scroll.css" />
@@ -17,15 +17,15 @@
       <!-- header -->
       <div class="button-container">
         <div class="button-row">
-          <button class="button">기본정보 관리</button>
-          <button class="button">투자유형 관리</button>
-          <button class="button">입출금내역 조회</button>
-          <button class="button">영업내역 조회</button>
-          <button class="button">투자내역 조회</button>
-          <button class="button">채권내역 조회</button>
-          <button class="button">SMS 관리</button>
-          <button class="button">상담내역 관리</button>
-          <button class="button">1:1문의내역 조회</button>
+          <button class="button" onclick="showDiv(0)">기본정보 관리</button>
+          <button class="button" onclick="showDiv(1)">투자유형 관리</button>
+          <button class="button" onclick="showDiv(2)">입출금내역 조회</button>
+          <button class="button" onclick="showDiv(3)">영업내역 조회</button>
+          <button class="button" onclick="showDiv(4)">투자내역 조회</button>
+          <button class="button" onclick="showDiv(5)">채권내역 조회</button>
+          <button class="button" onclick="showDiv(6)">SMS 관리</button>
+          <button class="button" onclick="showDiv(7)">상담내역 관리</button>
+          <button class="button" onclick="showDiv(8)">1:1문의내역 조회</button>
         </div>
       </div>
 
@@ -120,52 +120,57 @@
         </div>
       </div>
 
-      <div class="table-container">
-        <table id="myTable">
-          <thead>
-            <tr>
-              <th><input type="checkbox" id="selectAll" /></th>
-              <th>No</th>
-              <th>기존유형</th>
-              <th>신청유형</th>
-              <th>제출서류</th>
-              <th>신청일시</th>
-              <th>승인여부</th>
-              <th>승인거부 사유</th>
-              <th>승인일시</th>
-              <th>승인일시</th>
-              <th>관리자</th>
-              <th>标签1</th>
-              <th>标签2</th>
-              <th>标签3</th>
-              <th>标签4</th>
-              <th>标签5</th>
-              <th>标签6</th>
-              <th>标签7</th>
-              <th>标签8</th>
-            </tr>
-          </thead>
+      <div id="div0">
+        <div class="table-container">
+          <table id="myTable">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll" /></th>
+                <th>No</th>
+                <th>기존유형</th>
+                <th>신청유형</th>
+                <th>제출서류</th>
+                <th>신청일시</th>
+                <th>승인여부</th>
+                <th>승인거부 사유</th>
+                <th>승인일시</th>
+                <th>승인일시</th>
+                <th>관리자</th>
+                <th>标签1</th>
+                <th>标签2</th>
+                <th>标签3</th>
+                <th>标签4</th>
+                <th>标签5</th>
+                <th>标签6</th>
+                <th>标签7</th>
+                <th>标签8</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <!-- Rows will be dynamically generated here -->
-          </tbody>
-        </table>
+            <tbody>
+              <!-- Rows will be dynamically generated here -->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button id="firstPage">
+            <img src="./assets/jumpToLeft.svg" alt="Icon Not Found" />
+          </button>
+          <button id="prevPage" disabled>
+            <img src="./assets/left.svg" alt="Icon Not Found" />
+          </button>
+          <div id="paginationNumbers"></div>
+          <button id="nextPage">
+            <img src="./assets/right.svg" alt="Icon Not Found" />
+          </button>
+          <button id="lastPage">
+            <img src="./assets/jumpToRight.svg" alt="Icon Not Found" />
+          </button>
+        </div>
       </div>
-      <div class="pagination">
-        <button id="firstPage">
-          <img src="./assets/jumpToLeft.svg" alt="Icon Not Found" />
-        </button>
-        <button id="prevPage" disabled>
-          <img src="./assets/left.svg" alt="Icon Not Found" />
-        </button>
-        <div id="paginationNumbers"></div>
-        <button id="nextPage">
-          <img src="./assets/right.svg" alt="Icon Not Found" />
-        </button>
-        <button id="lastPage">
-          <img src="./assets/jumpToRight.svg" alt="Icon Not Found" />
-        </button>
-      </div>
+
+      <div id="div1">투자유형 관리</div>
+      <div id="div2">입출금내역 조회</div>
     </div>
 
     <script src="./javascript/script.js"></script>
