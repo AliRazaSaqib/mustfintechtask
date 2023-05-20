@@ -280,7 +280,6 @@ var btn = document.getElementById("registractionBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-var span1 = document.getElementsByClassName("close")[1];
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
@@ -291,16 +290,19 @@ btn.onclick = function () {
 span.onclick = function () {
   modal.style.display = "none";
 };
-span1.onclick = function () {
-  modal.style.display = "none";
-};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  } else if (event.target == successModal) {
+    successModal.style.display = "none";
   }
 };
+
+function hideDialog() {
+  successModal.style.display = "none";
+}
 
 // upload and delete file
 function handleFileSelect(event) {
