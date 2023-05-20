@@ -222,6 +222,119 @@
           </div>
         </div>
       </div>
+      <!-- inquery Modal -->
+      <div id="inqueryModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-head">
+            <h2>
+              <p>승인거부 사유 입력</p>
+            </h2>
+            <span class="close" onclick="closeInqueryTab()">&times;</span>
+          </div>
+          <!-- modal body -->
+          <div class="modal-container">
+            <div class="modalBody">
+              <div class="modal-input">
+                <h3>회원번호</h3>
+                <input type="text" id="memberNumber" placeholder="회원번호" />
+              </div>
+              <div class="modal-input">
+                <h3>회원명/법인명</h3>
+                <input
+                  type="text"
+                  id="memberNumber"
+                  placeholder="김길동, ㈜가나다라투자"
+                />
+              </div>
+              <div class="modal-input">
+                <h3 class="inquery-label">
+                  승인거부 사유
+                  <div class="required inquery-req"></div>
+                </h3>
+                <div class="checkbox-list">
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox1"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">서류 식별 불가</span>
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox2"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">필수 서류 누락</span>
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox3"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label"
+                      >서류의 내용이 등록된 회원정보와 다름</span
+                    >
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox4"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label"
+                      >서류에 누락된 내용이 있음 (필수정보, 회사직인, 본인날인,
+                      본인서명 등)</span
+                    >
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox5"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">서류의 유효기간이 초과됨</span>
+                  </label>
+
+                  <label class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="checkbox6"
+                      onchange="toggleTextArea(this)"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">직접 입력</span>
+                  </label>
+
+                  <textarea
+                    id="reasonTextArea"
+                    class="reason-textarea"
+                    placeholder="사유를 입력하세요"
+                    disabled
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer-buttons">
+              <button onclick="successDialog()" id="successBtn">저장</button>
+              <button>취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div id="div0">
         <div class="table-container">

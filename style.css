@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Styling for the body container */
 .body-container {
   max-width: 1440px;
@@ -353,7 +360,7 @@ input[type="checkbox"]:checked {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -361,6 +368,12 @@ input[type="checkbox"]:checked {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  right: 50%;
+  left: 50%;
 }
 /* Modal Content */
 .modal-content {
@@ -516,6 +529,19 @@ input[type="checkbox"]:checked {
   top: 12px;
   right: 100px;
 }
+.inquery-req {
+  right: 64px;
+  top: 150px;
+}
+.inquery-label {
+  height: 298px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 .modal-container ul {
   padding: 0;
   padding-left: 14px;
@@ -580,6 +606,116 @@ input[type="checkbox"]:checked {
   line-height: 28px;
   margin: 0;
 }
+.checkbox-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 18px 16px 8px;
+  width: 100%;
+}
+
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  margin-right: 8px;
+  position: relative;
+}
+
+.checkbox-custom:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  -webkit-transition: background-color 0.2s, border-color 0.2s;
+  -o-transition: background-color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkbox-custom:before {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+.checkbox-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #0b101a;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+/* Media Query for Responsive Layout */
+@media screen and (max-width: 768px) {
+  .checkbox-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .checkbox {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+.reason-textarea {
+  width: 96%;
+  height: 100px;
+  resize: vertical;
+  border-radius: 8px;
+  resize: none;
+  overflow-y: auto;
+}
+textarea {
+  outline: none;
+  padding: 4px 8px;
+}
+
+/* Add this style to highlight the textarea when enabled */
+.reason-textarea:enabled {
+  border: 2px solid #ccc;
+}
+
+/* Add this style to disable the textarea */
+.reason-textarea:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
 
 /* loader */
 
@@ -614,10 +750,19 @@ input[type="checkbox"]:checked {
   .header-dropdown {
     padding-bottom: 12px;
   }
+  .inquery-label {
+    height: 360px;
+  }
+  .inquery-req {
+    top: 180px;
+  }
 }
 @media (max-width: 468px) {
   .dropdown-toggle {
     min-width: 120px;
     font-size: 12px;
+  }
+  .modalBody .dropdown-toggle {
+    min-width: 200px;
   }
 }

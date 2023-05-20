@@ -274,6 +274,7 @@ function showDiv(index) {
 var modal = document.getElementById("registractionModal");
 var successModal = document.getElementById("successModal");
 var successModalClose = document.getElementById("success-span");
+var inqueryModal = document.getElementById("inqueryModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("registractionBtn");
@@ -297,11 +298,20 @@ window.onclick = function (event) {
     modal.style.display = "none";
   } else if (event.target == successModal) {
     successModal.style.display = "none";
+  } else if (event.target == inqueryModal) {
+    inqueryModal.style.display = "none";
   }
 };
 
 function hideDialog() {
   successModal.style.display = "none";
+}
+function closeInqueryTab() {
+  inqueryModal.style.display = "none";
+}
+function successDialog() {
+  successModal.style.display = "block";
+  inqueryModal.style.display = "none";
 }
 
 // upload and delete file
@@ -352,9 +362,15 @@ function hideLoader(button) {
   if (loader) {
     button.removeChild(loader);
     modal.style.display = "none";
-    successModal.style.display = "block";
+    inqueryModal.style.display = "block";
   }
 
   // Restore the button text
   button.innerText = "저장";
+}
+
+// textbox enable and disable
+function toggleTextArea(checkbox) {
+  var textarea = document.getElementById("reasonTextArea");
+  textarea.disabled = !checkbox.checked;
 }
