@@ -763,6 +763,16 @@ textarea {
     width: 84%;
   }
 }
+
+@media (max-width: 576px) {
+  .modalBody h3 {
+    max-width: 120px;
+  }
+  .inquery-req {
+    right: 28px;
+  }
+}
+
 @media (max-width: 468px) {
   .dropdown-toggle {
     min-width: 120px;
