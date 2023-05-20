@@ -159,6 +159,9 @@
 .dropdown-arrow {
   position: absolute;
   right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .dropdown-item {
   padding: 8px 16px;
@@ -755,6 +758,9 @@ textarea {
   }
   .inquery-req {
     top: 180px;
+  }
+  .reason-textarea {
+    width: 84%;
   }
 }
 @media (max-width: 468px) {
