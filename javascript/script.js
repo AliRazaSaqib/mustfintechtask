@@ -24,7 +24,7 @@ var records = [
   },
 ];
 
-for (var i = 2; i <= 100; i++) {
+for (var i = 2; i <= 150; i++) {
   var newObj = {
     No: i.toString(),
     基本类型: "类型" + i.toString(),
@@ -51,7 +51,7 @@ for (var i = 2; i <= 100; i++) {
   records.push(newObj);
 }
 
-var itemsPerPage = 10;
+var itemsPerPage = 30;
 var currentPage = 1;
 var totalPages = Math.ceil(records.length / itemsPerPage);
 
@@ -211,18 +211,40 @@ for (var i = 0; i < buttons.length; i++) {
   });
 }
 
-// dropdown
-function dropdownToggle() {
-  document.getElementById("dropdownMenu").classList.toggle("show");
+function dropdownToggle(index) {
+  var dropdownMenus = document.getElementsByClassName("dropdown-menu");
+
+  // Close all other dropdowns
+  for (var i = 0; i < dropdownMenus.length; i++) {
+    if (i !== index) {
+      dropdownMenus[i].classList.remove("show");
+    }
+  }
+
+  // Toggle the visibility of the clicked dropdown
+  var dropdownMenu = document.getElementById("dropdownMenu" + index);
+  dropdownMenu.classList.toggle("show");
+
+  // Set the dropdown value to the button
+  var button = document.getElementsByClassName("dropdown-toggle")[index];
+  var dropdownItems = dropdownMenu.getElementsByClassName("dropdown-item");
+  for (var j = 0; j < dropdownItems.length; j++) {
+    dropdownItems[j].addEventListener("click", function () {
+      var selectedValue = this.innerText;
+      button.innerText = selectedValue;
+
+      // Close the dropdown
+      dropdownMenu.classList.remove("show");
+    });
+  }
 }
 
-// Close the dropdown if the user clicks outside of it
+// Close the dropdowns if the user clicks outside of them
 window.onclick = function (event) {
   if (!event.target.matches(".dropdown-toggle")) {
-    var dropdowns = document.getElementsByClassName("dropdown-menu");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
+    var dropdownMenus = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdownMenus.length; i++) {
+      var openDropdown = dropdownMenus[i];
       if (openDropdown.classList.contains("show")) {
         openDropdown.classList.remove("show");
       }
@@ -231,9 +253,14 @@ window.onclick = function (event) {
 };
 
 // show and hide sections
+// Hide all divs except the first one
+var divs = document.querySelectorAll('[id^="div"]');
+for (var i = 1; i < divs.length; i++) {
+  divs[i].style.display = "none";
+}
+
 function showDiv(index) {
   // Hide all divs
-  var divs = document.querySelectorAll('[id^="div"]');
   for (var i = 0; i < divs.length; i++) {
     divs[i].style.display = "none";
   }
@@ -241,4 +268,91 @@ function showDiv(index) {
   // Show the selected div
   var selectedDiv = document.getElementById("div" + index);
   selectedDiv.style.display = "block";
+}
+
+// modal animation
+var modal = document.getElementById("registractionModal");
+var successModal = document.getElementById("successModal");
+var successModalClose = document.getElementById("success-span");
+
+// Get the button that opens the modal
+var btn = document.getElementById("registractionBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close")[1];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+span1.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// upload and delete file
+function handleFileSelect(event) {
+  const fileInput = event.target;
+  const file = fileInput.files[0];
+  const uploadedFileSection = document.getElementById("uploadedFileSection");
+
+  // Display the selected file name
+  const fileName = file ? file.name : "";
+  uploadedFileSection.innerHTML = `
+    <div class="uploaded-file">
+      <span class="file-name">${fileName}</span>
+      <span class="delete-button" onclick="deleteFile()">&times;</span>
+    </div>
+  `;
+}
+
+function deleteFile() {
+  const uploadedFileSection = document.getElementById("uploadedFileSection");
+
+  // Clear the uploaded file section
+  uploadedFileSection.innerHTML = "";
+  // Reset the file input value
+  document.getElementById("documentUpload").value = "";
+}
+
+// save button animation
+function showLoader(button) {
+  // Hide the button text
+  button.innerText = "";
+
+  // Show the loader
+  const loader = document.createElement("img");
+  loader.src = "./assets/loader.png"; // Replace "loading.gif" with the path to your loading GIF image
+  loader.classList.add("loader");
+  button.appendChild(loader);
+
+  // Set a timeout to hide the loader after 2 seconds
+  setTimeout(function () {
+    hideLoader(button);
+  }, 2000);
+}
+
+function hideLoader(button) {
+  // Remove the loader
+  const loader = button.querySelector(".loader");
+  if (loader) {
+    button.removeChild(loader);
+    modal.style.display = "none";
+    successModal.style.display = "block";
+  }
+
+  // Restore the button text
+  button.innerText = "저장";
 }
