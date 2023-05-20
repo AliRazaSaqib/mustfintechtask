@@ -771,6 +771,9 @@ textarea {
   .inquery-req {
     right: 28px;
   }
+  .required {
+    right: 62px;
+  }
 }
 
 @media (max-width: 468px) {
