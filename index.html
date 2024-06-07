@@ -98,8 +98,7 @@
                 <button
                   class="dropdown-toggle"
                   id="dropdownToggle"
-                  onclick="dropdownToggle(3)"
-                >
+                  onclick="dropdownToggle(3)">
                   승인여부 전체
                 </button>
                 <span class="dropdown-arrow">
@@ -140,8 +139,7 @@
                 <input
                   type="text"
                   id="memberNumber"
-                  placeholder="회원명/법인명"
-                />
+                  placeholder="회원명/법인명" />
               </div>
               <div class="modal-input">
                 <h3>
@@ -155,15 +153,13 @@
                         <button
                           class="dropdown-toggle"
                           id="dropdownToggle"
-                          onclick="dropdownToggle(4)"
-                        >
+                          onclick="dropdownToggle(4)">
                           일반개인
                         </button>
                         <span class="dropdown-arrow">
                           <img
                             src="./assets/dropdown_arrow.svg"
-                            alt="No Icon Found"
-                          />
+                            alt="No Icon Found" />
                         </span>
                       </div>
                       <ul class="dropdown-menu user-list" id="dropdownMenu4">
@@ -186,8 +182,7 @@
                 <input
                   type="file"
                   id="documentUpload"
-                  onchange="handleFileSelect(event)"
-                />
+                  onchange="handleFileSelect(event)" />
                 <div id="uploadedFileSection"></div>
               </div>
             </div>
@@ -200,7 +195,7 @@
             </div>
             <div class="modal-footer-buttons">
               <button onclick="showLoader(this)" id="successBtn">저장</button>
-              <button>취소</button>
+              <button onclick="closeRegistractionModal()">취소</button>
             </div>
           </div>
         </div>
@@ -217,7 +212,7 @@
           <div class="success-message">
             <h2>저장되었습니다</h2>
             <div class="modal-footer-buttons">
-              <button>확인</button>
+              <button onclick="hideDialog()">확인</button>
             </div>
           </div>
         </div>
@@ -244,8 +239,7 @@
                 <input
                   type="text"
                   id="memberNumber"
-                  placeholder="김길동, ㈜가나다라투자"
-                />
+                  placeholder="김길동, ㈜가나다라투자" />
               </div>
               <div class="modal-input">
                 <h3 class="inquery-label">
@@ -256,9 +250,8 @@
                   <label class="checkbox">
                     <input
                       type="checkbox"
-                      name="checkbox1"
-                      onchange="toggleTextArea(this)"
-                    />
+                      name="checkbox"
+                      onchange="toggleTextArea()" />
                     <span class="checkbox-custom"></span>
                     <span class="checkbox-label">서류 식별 불가</span>
                   </label>
@@ -266,9 +259,8 @@
                   <label class="checkbox">
                     <input
                       type="checkbox"
-                      name="checkbox2"
-                      onchange="toggleTextArea(this)"
-                    />
+                      name="checkbox"
+                      onchange="toggleTextArea()" />
                     <span class="checkbox-custom"></span>
                     <span class="checkbox-label">필수 서류 누락</span>
                   </label>
@@ -276,9 +268,8 @@
                   <label class="checkbox">
                     <input
                       type="checkbox"
-                      name="checkbox3"
-                      onchange="toggleTextArea(this)"
-                    />
+                      name="checkbox"
+                      onchange="toggleTextArea()" />
                     <span class="checkbox-custom"></span>
                     <span class="checkbox-label"
                       >서류의 내용이 등록된 회원정보와 다름</span
@@ -288,9 +279,8 @@
                   <label class="checkbox">
                     <input
                       type="checkbox"
-                      name="checkbox5"
-                      onchange="toggleTextArea(this)"
-                    />
+                      name="checkbox"
+                      onchange="toggleTextArea()" />
                     <span class="checkbox-custom"></span>
                     <span class="checkbox-label">서류의 유효기간이 초과됨</span>
                   </label>
@@ -298,9 +288,8 @@
                   <label class="checkbox">
                     <input
                       type="checkbox"
-                      name="checkbox6"
-                      onchange="toggleTextArea(this)"
-                    />
+                      name="checkbox"
+                      onchange="toggleTextArea()" />
                     <span class="checkbox-custom"></span>
                     <span class="checkbox-label">직접 입력</span>
                   </label>
@@ -309,15 +298,14 @@
                     id="reasonTextArea"
                     class="reason-textarea"
                     placeholder="사유를 입력하세요"
-                    disabled
-                  ></textarea>
+                    disabled></textarea>
                 </div>
               </div>
             </div>
 
             <div class="modal-footer-buttons">
               <button onclick="successDialog()" id="successBtn">저장</button>
-              <button>취소</button>
+              <button onclick="closeInqueryTab()">취소</button>
             </div>
           </div>
         </div>

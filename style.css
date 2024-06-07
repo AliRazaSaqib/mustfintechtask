@@ -668,14 +668,23 @@ textarea {
   .required {
     right: 62px;
   }
+  .modal-content {
+    width: 96%;
+  }
 }
 
 @media (max-width: 468px) {
   .dropdown-toggle {
-    min-width: 120px;
+    min-width: 114px;
     font-size: 12px;
   }
   .modalBody .dropdown-toggle {
     min-width: 200px;
+  }
+  .dropdown-menu {
+    min-width: 132px;
+  }
+  .modal-content {
+    width: 96%;
   }
 }

@@ -313,6 +313,9 @@ function successDialog() {
   successModal.style.display = "block";
   inqueryModal.style.display = "none";
 }
+function closeRegistractionModal() {
+  modal.style.display = "none";
+}
 
 // upload and delete file
 function handleFileSelect(event) {
@@ -370,7 +373,13 @@ function hideLoader(button) {
 }
 
 // textbox enable and disable
-function toggleTextArea(checkbox) {
+function toggleTextArea() {
+  var checkboxes = document.querySelectorAll('input[name="checkbox"]');
   var textarea = document.getElementById("reasonTextArea");
-  textarea.disabled = !checkbox.checked;
+  textarea.disabled = true;
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      textarea.disabled = false;
+    }
+  });
 }
