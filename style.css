@@ -1,16 +1,9 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 /* Styling for the body container */
 .body-container {
   max-width: 1440px;
   width: 100%;
   margin: auto;
-  padding: 12px 24px;
+  padding: 12px 0;
 }
 .button-container {
   border-top: 1px solid #d7d8da;
@@ -450,6 +443,12 @@ input[type="checkbox"]:checked {
   align-items: center;
   justify-content: center;
 }
+.fileUpload span {
+  max-width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .required {
   height: 4px;
   width: 4px;
@@ -660,16 +659,24 @@ textarea {
 
 @media (max-width: 576px) {
   .modalBody h3 {
-    max-width: 120px;
+    max-width: 104px;
+    min-width: 104px;
   }
   .inquery-req {
-    right: 28px !important;
+    right: 16px !important;
   }
   .required {
-    right: 62px;
+    right: 50px;
   }
-  .modal-content {
+  .modal-content,
+  .successModal .modal-content {
     width: 96%;
+  }
+  .checkbox-label {
+    font-size: 12px;
+  }
+  .fileUpload span {
+    max-width: 60px;
   }
 }
 
@@ -679,12 +686,23 @@ textarea {
     font-size: 12px;
   }
   .modalBody .dropdown-toggle {
-    min-width: 200px;
+    min-width: 170px;
   }
   .dropdown-menu {
     min-width: 132px;
   }
-  .modal-content {
+  .modal-content,
+  .successModal .modal-content {
     width: 96%;
+  }
+  .checkbox-label {
+    font-size: 12px;
+  }
+  .reason-textarea {
+    width: 76%;
+  }
+  .checkbox-custom {
+    width: 14px;
+    height: 14px;
   }
 }
